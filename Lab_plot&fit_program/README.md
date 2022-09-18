@@ -1,9 +1,4 @@
-<<<<<<< HEAD
-eufito
-oi
-
 Hardware eventually fails. Software eventually works. And fail, we shall.
-Pilada na testa
 
 1. Introdução
 
@@ -43,28 +38,3 @@ ymax:<valor máximo das ordenadas>
 3. Outros
 
 
-Créditos a Pedro Pereira por versão base (plotmaker)
-=======
-Instrucoes
-
-adicionar files:
-git add x.filetype
-git commit -m "message"
-git push
- 
-adicionar folder:
-cd folder
-git init
-git remote add origin https://gitlab.com/pedro14p/LFEA.git
-git add .
-git commit -am "message"
-git push -u origin master
-
-
-editar um file:
-git commit -am "message"
-git push
-
-fazer up:
-git pull
->>>>>>> 1f6503373f533fa6d28e07aa83c7c9f3b3363de2
