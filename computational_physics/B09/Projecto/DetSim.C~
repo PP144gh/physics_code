@@ -1,0 +1,33 @@
+#include "cFCgraphics.h"
+#include "EventAnalyzer.h"
+#include "TH2F.h"
+#include <TROOT.h>
+#include <TStyle.h>
+#include <iostream>
+#include "ctime"
+#include <string>
+#include "TRandom3.h"
+#include <cstdlib>
+
+using namespace std;
+
+int main() {
+ 
+  EventAnalyzer A(6400,5);
+
+  A.CleanData();
+  //posiçao particula teste
+  float* p=new float [2]; 
+  TRandom3 rand(0);
+  for (int i=0; i<10000; ++i) {
+    EventGenerator E(6400,5);
+    p[0]=rand.Uniform(100,300);
+    p[1]=rand.Uniform(100,300);
+    float beta=rand.Uniform(1/1.3+0.001,1);
+    E.MakeEvent(p,beta,0.005,E); 
+    E.RecEvent();
+  }
+  A.InfoDraw(1);
+  A.Hist();
+  return 0;
+}

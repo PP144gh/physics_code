@@ -1,0 +1,43 @@
+This first evolution was named 'Lucky', because it happens when the population finds the two food site very early.
+\setcounter{figure}{4}
+
+\begin{figure}[H] 
+  \begin{subfigure}[b]{0.5\linewidth}
+    \centering
+    \includegraphics[width=0.9\linewidth]{l_5.pdf} 
+    \caption{Day 5} 
+    \label{fig7:a} 
+    \vspace{4ex}
+  \end{subfigure}%% 
+  \begin{subfigure}[b]{0.5\linewidth}
+    \centering
+    \includegraphics[width=0.9\linewidth]{l_50.pdf} 
+    \caption{Day 55} 
+    \label{fig7:b} 
+    \vspace{4ex}
+  \end{subfigure} 
+  \begin{subfigure}[b]{0.5\linewidth}
+    \centering
+    \includegraphics[width=0.9\linewidth]{l_58.pdf} 
+    \caption{Day 58} 
+    \label{fig7:c} 
+  \end{subfigure}%%
+  \begin{subfigure}[b]{0.5\linewidth}
+    \centering
+    \includegraphics[width=0.9\linewidth]{l_99.pdf} 
+    \caption{Day 99} 
+    \label{fig7:d} 
+  \end{subfigure} 
+  \caption{'Lucky' Evolution}
+  \label{fig7} 
+\end{figure}
+As expected the population develops around the food sites and, as we can see, there is a tendency for the two subpopulations to mix (day 58).
+
+ \begin{figure}[H]
+\centering
+  \includegraphics[scale=0.4]{lucky.pdf}
+\caption{Fit to equation  (\ref{eq:1}); \ $p_0= N_{eq}$, $p_1=k$ and $p_2=d_0$  }
+  \label{fig:sub1}
+\end{figure}
+
+The mixing happens after the population number reaches around $N_{eq}$  ( day 35), or in other words, after the population saturates the food sources daily production. This is expected because this is when the population starts exploring the zones away from the known food sites, looking for new ones.\\

@@ -1,0 +1,83 @@
+
+ /***POP GENERATOR 2 ***/
+  //generates pop in a big L with 2 cell in each square and vertex at 0,0. 
+
+ //pop generator
+  int cellnumber=10; //has to be even
+  //pop A
+  int currentserial=0;
+  vector<cell*> popA;
+
+  for( int q=0; q<cellnumber/2; ++q) {
+    int l=q+1;
+    if (q==0) {l=1;}
+      popA.push_back(new cell (0,l,q,1,0,0,q%2,0,0,0)); //q%2 means q even sex is 0, q odd sex is 1
+  }
+
+  for( int q=0; q<cellnumber/2; ++q) {
+     int l=q+1;
+    if (q==0) {l=1;}
+    popA.push_back(new cell (L-1,l,q+cellnumber/2,1,0,0,q%2,0,0,0)); //q%2 means q even sex is 0, q odd sex is 1
+  }
+  //END OF POP GENERATOR 2*/
+  
+
+
+  
+ 
+  /*****Try 2(distribuiçao simetrica) de food e death sites *****/
+  //tenho de meter mais entries nos death para este ficar vermelho e o food ficar verde, escala dde cor e prop a escala de entries
+  int JMAX=50;
+
+  //food
+  vector<int> fx;
+  vector<int> fy;
+ 
+  
+	fx.push_back(1);
+	fy.push_back(1);
+	for(int j=0; j<0.5*JMAX; ++j){
+	  fdmat->Fill(1,1); }
+
+	fx.push_back(4);
+	fy.push_back(4);
+	for(int j=0; j<0.5*JMAX; ++j){
+	  fdmat->Fill(4,4); }
+
+
+ 
+  int fnumber=fx.size();// L*L/4 : 1 food site per 4 lattice squares
+  
+  //death zones
+  vector<int> deathx;
+  vector<int> deathy;
+
+      deathx.push_back(1);
+      deathy.push_back(4);
+      for(int j=0; j<JMAX; ++j) {
+	fdmat->Fill(1,4); }
+
+        deathx.push_back(4);
+      deathy.push_back(1);
+      for(int j=0; j<JMAX; ++j) {
+	fdmat->Fill(4,1); }
+  
+  
+  int dnumber=deathx.size(); //1 death zone per 16 square lattices (aprox)
+
+  //food limit 
+  vector<int> foodc; //foodc[0] contador de fx[0] fy[0] (corresponde a (1,0) )
+  foodc.resize(fnumber);
+  //FIM DA TRY 2*****/		  
+
+  //conditions
+  int maxage=20; //after maxage steps cells die
+  int maxswof=6; //max steps without food
+  int x; int y; //position variables
+  int dmax=100; //max steps of simulation
+  int minagesex=0; //min age for reproduction
+  int flagserial=-1;//cheat variable to generate 1 child per pair and not two
+  int gentrack=0;
+  int dailyflimit=100;
+
+

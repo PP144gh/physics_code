@@ -1,0 +1,13 @@
+class Material {
+ public:
+  Material() {};
+  ~Material {};  
+  void SetRefractiveIndex(float*);
+  float* GetRefractiveIndex ();
+  void FitRefractiveIndex();
+  void DrawRefractiveIndex(); //draw points
+  void DrawRefractiveIndex (const TF1*); //draw points and function
+ private:
+  string name;
+  // string density;
+};

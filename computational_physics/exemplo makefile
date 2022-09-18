@@ -1,0 +1,42 @@
+ficheiro nome: a
+
+
+ReadPol: ReadPol.o MPol.o Pol.o
+	g++ -o ReadPol.exe ReadPol.o -L../../LIBs -l FC _x86_64 -I ../../2014/B09/Trab1 Pol.o MPol.o
+
+*/
+ReadPol: ReadPol.o libB09.a libB09_.so
+	g++ -o ReadPol.exe ReadPol.o -L../../LIBs -l FC _x86_64 -I ../../2014/B09/Trab1 -L. -l B09
+
+alternativa( criar lib)
+libB09.a: Pol.o Mpol.o
+	ar ruv libB09.a $< ($< comando que identifica as dependencias)
+	ranlib libB09
+
+libB09_.so: Pol.o Mpol.o
+	g++ shared -o libB09_.so $^
+	
+(precisa de -fpic na compilaçao e de saber a localizaçao, precisa de X na linha de comandos)
+/*
+
+ReadPol.o: ../../2014/B09/Trab1/ReadPol.C
+	@echo Compiling ... $< $@ $^
+	g+ -c (-fpic ) $< -I ../../LIBs ../../2014/B09/Trab1
+
+ReadPol.o: ../../2014/B09/Trab1/MPol.C
+	@echo Compiling ... $< $@ $^
+	g+ -c $< -I ../../LIBs ../../2014/B09/Trab1
+
+ReadPol.o: ../../2014/B09/Trab1/Pol.C
+	@echo Compiling ... $< $@ $^
+	g+ -c $< -I ../../LIBs ../../2014/B09/Trab1
+
+
+
+linha comandos
+
+make -f a ReadPol
+
+ou make -f a LibB09.a
+
+X: setenv LD_Library_PATH ./LD_LIBRARY_PATH:PATH

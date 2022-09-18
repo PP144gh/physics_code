@@ -1,0 +1,161 @@
+//codigo para o exercicio das classes
+#include<string>
+#include<iostream>
+#include<cstdlib>
+#include<vector>
+using namespace std;
+
+class Pol {
+public:
+  Pol(){nome="polinomio";grau=0;coef=new int;coef=0;};  // default constructor
+  Pol(string, int);                                     // constructor with 2 arguments
+  Pol(string, int, int*);                               // constructor with coefficients input by int*
+  Pol(string, int, vector<int>);                        // constructor with coefficients input by vector<int>
+  Pol(Pol& p);       
+  Pol(Pol* p); 
+  Pol& operator=(const Pol& p);
+  Pol& operator+=(const Pol&p);
+  Pol& operator-=(const Pol&p);
+  Pol& operator*=(const Pol&p);
+  void SetPolynomial(int, int*);
+  void SetCoefficient(int, int);
+  void Print(){cout << nome<< " ";for(int i=0;i<grau;++i)cout<<coef[i]<<"x"<<i<<"+";cout<<endl;}
+  ~Pol(){};
+private:
+  string nome;
+  int grau;
+  int *coef;
+};
+
+Pol::Pol(string k,int n){
+  nome=k;
+  grau=n;
+  coef=new int[n];
+  for (int i=0;i<n;++i)
+    coef[i]=0;
+}
+
+Pol::Pol(string k,int n,int* a){
+  nome=k;
+  grau=n;
+  coef=new int[n];
+  for (int i=0;i<n;++i)
+    coef[i]=a[i];
+}
+
+Pol::Pol(string k,int n,vector<int> a){
+  nome=k;
+  grau=n;
+  coef=new int[n];
+  for (int i=0;i<n;++i)
+    coef[i]=a[i];
+}
+
+Pol::Pol(Pol& p){
+  nome=p.nome;
+  grau=p.grau;
+  coef=new int[grau];
+  for(int i=0;i<grau;++i)
+    coef[i]=p.coef[i];
+}
+
+Pol::Pol(Pol* p){
+  nome=p->nome;
+  grau=p->grau;
+  coef=new int[grau];
+  for(int i=0;i<grau;++i)
+    coef[i]=p->coef[i];
+}
+
+Pol& Pol::operator=(const Pol& t){
+  if(this!=&t)
+    {nome=t.nome;grau=t.grau;coef=new int[grau];for(int i=0;i<grau;++i)coef[i]=t.coef[i];}
+  return (*this);
+}
+
+Pol& Pol::operator+=(const Pol& t){
+  if (grau>t.grau)
+    for(int i=0;i<t.grau;++i)
+      coef[i]+=t.coef[i];
+  else{
+    coef=new int[t.grau];
+    for(int i=grau;i<t.grau;++i)
+      coef[i]=0;
+    for(int i=0;i<t.grau;++i)
+      coef[i]+=t.coef[i];
+    grau=t.grau;
+  }
+  return (*this);
+}
+
+Pol& Pol::operator-=(const Pol& t){
+  if (grau>t.grau)
+    for(int i=0;i<t.grau;++i)
+      coef[i]-=t.coef[i];
+  else{
+    coef=new int[t.grau];
+    for(int i=grau;i<t.grau;++i)
+      coef[i]=0;
+    for(int i=0;i<t.grau;++i)
+      coef[i]-=t.coef[i];
+    grau=t.grau;
+  } 
+  return (*this);
+}
+
+Pol& Pol::operator*=(const Pol& t){
+  if (grau>t.grau)
+    for(int i=0;i<t.grau;++i)
+      coef[i]*=t.coef[i];
+  else{
+    coef=new int[t.grau];
+    for(int i=grau;i<t.grau;++i)
+      coef[i]=0;
+    for(int i=0;i<t.grau;++i)
+      coef[i]*=t.coef[i];
+    grau=t.grau;
+  }  
+  return (*this);
+}
+
+void Pol::SetPolynomial(int a,int* b){
+  nome="polinomio";
+  grau=a;
+  coef=new int[grau];
+  for (int i=0;i<grau;++i)
+    coef[i]=b[i];
+}
+
+void Pol::SetCoefficient(int a,int b){
+  coef[a]=b;
+}
+
+int main(){
+  Pol P;
+  P.Print();
+  Pol P5("P5",5);
+  int a[9]={2,1,5,2,5,4,9,8,1};
+  Pol Q("Q",9,a);
+  vector<int> b(4);
+  Pol V("V",3,b);
+  P.SetPolynomial(9,a);
+  P.SetCoefficient(2,-3);
+  Pol T(P);
+  Pol *W = new Pol(P);
+  Pol U(W);
+  Pol Z;
+  Z=T;
+  P.Print();
+  W[0].Print();
+  Z.Print();
+  U.Print();
+  P5.Print();
+  Q.Print();
+  V.Print();
+  int qr[2]={1,2};
+  Pol X("X",2,qr);
+  X.Print();
+  X+=T;
+  T.Print();
+  X.Print();
+}

@@ -1,0 +1,74 @@
+# Global Variable Declarations
+CC= g++
+FCLIB= -I ../../../LIBs 
+
+##root links and compiler flags
+CFLAGS = -g -Wall `root-config --cflags`
+LDFLAGS := `root-config --glibs`
+
+SRC1=   ../../../LIBs/cFCgraphics.C vectorEX.C 
+OBJ1= $(SRC1:.C=.o)
+EXE1= vectorEX
+
+SRC2=   point1DEX.C RpointEX.C 
+OBJ2= $(SRC2:.C=.o)
+EXE2= RpointEX
+
+SRC3=  RpointV.C point1DEX.C point2DEX.C
+OBJ3= $(SRC3:.C=.o)
+EXE3= RpointV
+
+SRC4=    RintegralEX.C
+OBJ4= $(SRC4:.C=.o)
+EXE4= RintegralEX
+
+SRC5=   ../../../LIBs/cFCgraphics.C RprojectileEX.C
+OBJ5= $(SRC5:.C=.o)
+EXE5= RintegralEX
+
+##Routines
+all: $(EXE1) $(EXE2) $(EXE3) $(EXE4) $(EXE5)
+
+## .o generator
+%.o:%.C
+	@echo Compiling...
+	$(CC)  $(CFLAGS) -c   $(FCLIB)   $<  -o $@ 
+
+vectorEX:  $(OBJ1)
+	@echo Linking...
+	$(CC) -o $@ $(OBJ1) $(LDFLAGS) 
+	@echo Running...
+	@./vectorEX
+	@rm -rf vectorEX
+
+
+RpointEX:  $(OBJ2)
+	@echo Linking...
+	$(CC) -o $@ $(OBJ2) $(LDFLAGS) 
+	@echo Running...
+	@./RpointEX
+	@rm -rf RpointEX
+
+RpointV:  $(OBJ3)
+	@echo Linking...
+	$(CC) -o $@ $(OBJ3) $(LDFLAGS) 
+	@echo Running...
+	@./RpointV
+	@rm -rf RpointV
+RintegralEX:  $(OBJ4)
+	@echo Linking...
+	$(CC) -o $@ $(OBJ4) $(LDFLAGS) 
+	@echo Running...
+	@./RintegralEX
+	@rm -rf RintegralEX
+
+RprojectileEX:  $(OBJ5)
+	@echo Linking...
+	$(CC) -o $@ $(OBJ5) $(LDFLAGS) 
+	@echo Running...
+	@./RprojectileEX
+	@rm -rf RprojectileEX
+
+clean:
+	@rm -rf *.o *~ 
+

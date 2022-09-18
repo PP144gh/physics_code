@@ -1,0 +1,179 @@
+\documentclass{article}
+\usepackage[portuguese]{babel}
+\usepackage[latin9]{inputenc}
+\usepackage[T1]{fontenc}
+\oddsidemargin -0.25in 
+\evensidemargin -0.25in
+\marginparwidth 40pt 
+\marginparsep 10pt
+\topmargin -0.25in 
+\textheight 9.1in 
+\textwidth 6.75in
+\usepackage{fixltx2e}
+\usepackage{setspace}	
+\usepackage{amsmath}
+\usepackage{enumerate}
+\usepackage{booktabs}
+\usepackage{graphicx}
+\usepackage{multicol}
+\usepackage{color}
+\usepackage{capt-of}
+\usepackage{mdwlist}
+\usepackage{amssymb}
+\providecommand{\abs}[1]{\lvert#1\rvert}
+\usepackage{listings}
+\usepackage{color}
+
+\definecolor{mygreen}{rgb}{0,0.6,0}
+\definecolor{mygray}{rgb}{0.5,0.5,0.5}
+\definecolor{mymauve}{rgb}{0.58,0,0.82}
+
+\lstset{ %
+  backgroundcolor=\color{white},   % choose the background color; you must add \usepackage{color} or \usepackage{xcolor}
+  basicstyle=\footnotesize,        % the size of the fonts that are used for the code
+  breakatwhitespace=false,         % sets if automatic breaks should only happen at whitespace
+  breaklines=true,                 % sets automatic line breaking
+  captionpos=b,                    % sets the caption-position to bottom
+  commentstyle=\color{mygreen},    % comment style
+  deletekeywords={...},            % if you want to delete keywords from the given language
+  escapeinside={\%*}{*)},          % if you want to add LaTeX within your code
+  extendedchars=true,              % lets you use non-ASCII characters; for 8-bits encodings only, does not work with UTF-8
+  frame=single,                    % adds a frame around the code
+  keepspaces=true,                 % keeps spaces in text, useful for keeping indentation of code (possibly needs columns=flexible)
+  keywordstyle=\color{blue},       % keyword style
+  language=Octave,                 % the language of the code
+  morekeywords={*,...},            % if you want to add more keywords to the set
+  numbers=left,                    % where to put the line-numbers; possible values are (none, left, right)
+  numbersep=5pt,                   % how far the line-numbers are from the code
+  numberstyle=\tiny\color{mygray}, % the style that is used for the line-numbers
+  rulecolor=\color{black},         % if not set, the frame-color may be changed on line-breaks within not-black text (e.g. comments (green here))
+  showspaces=false,                % show spaces everywhere adding particular underscores; it overrides 'showstringspaces'
+  showstringspaces=false,          % underline spaces within strings only
+  showtabs=false,                  % show tabs within strings adding particular underscores
+  stepnumber=2,                    % the step between two line-numbers. If it's 1, each line will be numbered
+  stringstyle=\color{mymauve},     % string literal style
+  tabsize=2,                       % sets default tabsize to 2 spaces
+  title=\lstname                   % show the filename of files included with \lstinputlisting; also try caption instead of title
+}
+
+\begin{document}
+
+\onehalfspacing
+\fbox{
+       \begin{minipage}{0.4in} 
+\includegraphics[scale=0.3]{images.png}\\~\\~\\
+\end{minipage}
+\begin{minipage}{6in}
+~\\
+IST- MEFT - Física Computacional - 27/10/2014 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~Pedro Pereira: 78889\\ 
+Prof. Fernando Barão~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
+João Alves: 79006 \\
+\textbf{Grupo B09}~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ \\
+\begin{center} \textbf{1º Trabalho Física Computacional - Memória Descritiva}\linebreak \end{center}
+\end{minipage}
+}
+
+\medskip 
+
+
+\begin{abstract}
+Neste trabalho, os principais problemas foram derivados de memory leaks e alocações de memórias incorretas.
+\end{abstract}
+
+
+
+
+
+\begin{multicols}{2}
+\section{Polin\'omios}
+\par  
+Este exercício familiarizou-nos com a definição de classes e dos seus operadores e métodos. Além disso levou-nos a refletir sobre métodos numéricos e formas de minimização de erro na definição da função evaluate.
+Para construir a biblioteca referida na alínea h) deste exercício, procederíamos da seguinte forma:\\
+g++ -c Pol.C\\
+    ar ruv lib2014B09.a Pol.o\\
+    ranlib lib2014B09.a\\
+
+
+\subsection{Construtores}
+Foi necessário definir um default constructor, que permitisse inicializar um polinómio zero sem que fosse necessária a inserção de polinómios. Para além deste, foram definidos outros construtores que permitem a inicialização de um polinómio pretendido.
+
+
+\subsection{M\'etodos}
+O principal cuidado que se teve na execução dos métodos desta classe foi o de comparar o grau dos polinómios intervenientes, garantindo sempre a aplicação do método para valores alocados de memória. Isto é, quando se adicionam dois polinómios, tem-se o cuidado de não adicionar coeficientes de maior grau que o do mais pequeno, de modo a não ler valores inválidos de memória.
+
+Na alinea g, estudou-se o método evaluate para o polinómio dado, tendo os valores por ele determinados um erro relativo bastante elevado. Isso deriva da existência de um cancelamento subtrativo perto do valor onde se pretende calcular a função. É possível otimizar pois, o número de condição do problema é dado por $P(f,x)=\frac{x.f'(x)}{f(x)}$, sendo que $f(x)=(x-1)^{8}$, o limite quando x tende para 1 \'e 8<$\infty$, logo est\'a bem condicionado. Para resolver este problema, coloca-se o polinómio na forma $P(x)=(x-z)^k*R(x)$, onde R(x) não se anula para z. Percebemos isto, foi verificámos que o polinómio dado era convertível em $P(x)= (x-1)^{8}$, calculando o valor usando essa expressão, obtém-se a solução numérica igual á que nos foi pedida para comparar. Assim, reduz-se o erro relativo do valor calculado. Para encontrar R(x), aplica-se o método de Ruffini sucessivamente a P(x). Infelizmente, por questões de tempo não foi possível a execução total deste método. À  esquerda do zero conseguimos obter excelentes aproximações, contudo á direita continua a ter alguns problemas.
+
+\section{Lista de Polin\'omios}
+\par 
+
+\subsection{Construtor}
+Foi necessário definir um construtor default, de forma a criar um objeto genérico pelo qual se pode aceder aos métodos e às variáveis privadas.
+
+\subsection{M\'etodos}
+Definir os métodos exigidos foi relativamente simples, e a sua explicação nos comentários é suficiente para a compreensão, excepto o caso do método Convert. 
+O trabalho nesta secção consistiu essencialmente numa pesquisa das funções da biblioteca fstream e cstdlib que nos fossem úteis.
+No método convert,inicialmente procurou-se o x. Guardou-se a posiçao do x num vetor, percorreu-se cada x e andou-se pra direita até aparecer um número, continuando até aparecer um espaço. Seguidamente, guardou-se os carateres entre ambos e converteu-se para número, isso era o grau. Fez-se o mesmo para a esquerda e isso era o coeficiente. Teve de se considerar os casos em que estava só um + ou só um - ou nada, depois ordenou-se, e preencheu-se com 0 os graus que não tinham coeficiente.
+No caso do ReadPol, foi usada a função ReadFile e um convert consecutivo a cada string i do vetor de strings retornado por ReadFile. Seguidamente, procedemos segundo o enunciado e obtivémos que a operação a realizar entre polinómios era: +R - S + P.
+Realizaram-se essas operações, utilizando as operações definidas em Pol, adicionando os valores parciais ao objeto de MPol genérico ao qual vai ser aplicado o método List de forma a imprimi-los. Removeu-se os polinómios pedidos usando a função DelPol definida em MPol e criou-se outro vetor de Pols, ao qual se aplicou List novamente.
+
+
+
+\section{Vetores e Matrizes}
+\par 
+
+\subsection{Vetores}
+Passou por 2 fases a realização desta secção.
+\subsubsection{Construtores}
+Em relação aos construtores e aos métodos Size,Scale e Dot, foi relativamente simples defini-los.
+\subsubsection{M\'etodos}
+Na fase inicial, a maior dificuldade foi definir os operadores +/- e +=/-= duma forma eficiente. Encontrou-se a solução de definir cuidadosamente +=/-= e definir +/- à custa destes. Como se pode verificar abaixo para os casos da soma. \\
+\begin{lstlisting}
+ const Vec& Vec::operator+=(const Vec& v) {
+ //teste de dimensão aqui
+    for (int i=0;i<N; ++i)
+      entries[i]+=v.entries[i];
+  
+  return *this;   }
+\end{lstlisting}
+
+\begin{lstlisting}
+const Vec Vec::operator+( const Vec& v) {
+  Vec w(*this);
+  w+=v;
+  return w;  }
+ \end{lstlisting}
+ 
+
+A 2ª fase consistiu em criar funções que facilitassem a manipulação/alocação de memória dos Vecs para facilitar-nos a vida nas classes derivadas de Mat. Foi nesta fase que surgiram as funções SetN, Setentries, GetN e Getentries.
+Foi também necessário definir um construtor default Vec, de forma a tornar possível a construção de arrays do tipo Vec.
+
+\subsection{MatFull e MatSparse} 
+\subsubsection{Construtores}
+
+Assumiu-se que cada vetor era uma linha da matriz, sendo a matriz definida por um array de Vecs.
+Definir os construtores desta classe deu, comparativamente à anterior, mais problemas. Tal como já dito, foi necessário construir-se funções extra em Vec devido a problemas de alocação de memória que surgiam a instanciar os objetos MatFull.
+
+Por exemplo, para o construtor do tipo M(nrows,ncols,a) com 'a' a ser um ponteiro para um array de vetores, inicialmente alocava-se memória para um número de vetores, i, igual ao número de linhas da matriz, e igualava-se  cada mvec[i] a[i]. Surgiam problemas porque não se dava indicação do número de entradas que cada vetor teria. Foi daí que surgiu a necessidade de criar as funções SetN e Setentries, que corrigiram o problema. O mesmo problema teria surgido na MatSparse, contudo já iamos preparados.
+
+
+
+
+\subsubsection{M\'etodos}
+Neste caso existiram duas fases distintas na definiçao dos métodos. Inicialmente, fizeram-se os métodos da MatFull, sendo que o facto de a matriz estar completamente preenchida facilitou bastante este processo. É apenas importante referir que foi utilizado o produto interno para multiplicar matrizes, uma vez que cada entrada de uma matriz corresponde ao produto de uma linha da primeira por uma coluna da segunda. 
+Posteriormente, realizaram-se os métodos da MatSparse. Tendo sido definida uma função SparseToFull, que partindo da MatSparse define um vetor double** a partir do qual se constrói a correspondente MatFull. Assim, reutilizam-se os métodos definidos para a MatFull, facilitando bastante a execução do programa.
+Um método mais eficiente para a multiplicação usando MatSparse seria, possivelmente, utilizar o vetor com as entradas não nulas da matriz e verificar com o vetor com os indíces quais as entradas que multiplicam, guardando os resultados noutro vetor, sendo todos as outras entradas zero. Mais uma vez não implementámos este método por falta de tempo, mas ao cogitar esta solução demonstra que entedemos o conceito por trás da MatSparse.
+No final de tudo, surgiu um problema a fazer print das matrizes no enunciado do exercício. Sempre que a última entrada da matriz era $0$, no caso da matriz A e B, dava um erro de memória. A solução encontrada foi definir esse valor como $1*10^{-200}$, que, é uma aproximação aceitável, sendo assim o erro do produto das matrizes muito pequeno.
+Também é de acrescentar que tentámos fazer o exigido pela classe Mat, isto é, pôr o $operador*$ a retornar $Mat\&$, dando assim uso ao polimorfismo do $C++$, mas devido a termos implementado o operador multiplicação antes disso, quando fomos verificar se ainda estava tudo ok, percebemos que teríamos que redefinir toda a função e repensar parte do nosso raciocínio. Então, por falta de tempo, limitámo-nos a retornar MatFull e MatSparse. 
+
+
+\begin{thebibliography}{9}
+
+
+\bibitem{Procedimento}
+\textit{Stroustrup, Bjarne. The C++ Programming Language. Reading, MA: Addison-Wesley, 2013.}
+\bibitem{Procedimento}
+\textit{Barão, Fernando. Slides das Aulas Teóricas. 2014.}
+
+\end{thebibliography}
+\end{multicols}
+\end{document}

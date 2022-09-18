@@ -1,0 +1,95 @@
+\documentclass[10pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{multicol}
+\usepackage{framed}
+\usepackage{mathtools}
+\usepackage{layout}
+\author{Pedro Pereira, nº78889; Miguel Ribeiro, nº79013; Inês Roça, nº78164}
+\usepackage{wrapfig}
+\date{}
+
+%%Tamanho das margens
+\voffset=-3cm %%Posição apartir da vertical
+\textheight=725pt %%Comprimento do papel
+
+\begin{document}
+
+%%Logo do Técnico
+\begin{wrapfigure}{l}{0.3\textwidth}
+\vspace*{-3.3cm}
+\hspace*{4cm}
+    \includegraphics[width=.3\textwidth]{tecnicologo}
+\end{wrapfigure}
+
+%%Título
+{\begin{flushleft}
+{ \Huge {Interferência e Difração de Ondas Eletromagnéticas}} \\[0.4cm]
+\end{flushleft}
+
+%%Cabeçalho
+\begin{flushright}
+\begin{framed}
+Grupo 52 – 21/11/2013\\Pedro Pereira, nº78889;\\Miguel Ribeiro, nº79013;\\Inês Roça, nº78164
+\end{framed}
+\end{flushright}	
+\section*{Introdução}
+%\begin{multicols}{2}
+Quando uma onda eletromagnética encontra um obstáculo ou um orifício cujas dimensões são da mesma ordem de grandeza do seu comprimento de onda, a sua trajetória sofre um desvio, isto é, a onda é difratada. Formam-se assim ondas secundárias que se se encontrarem na mesma fase podem interferir e formar uma onda de características distintas. A presente atividade tem como objetivo estudar o fenómeno de interferência e difração de ondas eletromagnéticas num meio dielétrico, homogéneo e isotrópico. \\Para tal, utilizar-se-á uma montagem composta por uma fonte luminosa que emitirá um feixe de luz monocromática que ao incidir em redes de fendas gera padrões de difrações. Note-se que a fonte de luz e o alvo de projeção devem encontrar-se a uma distância máxima tal que o seu quociente com a largura da fenda seja muito superior ao quociente entre a largura e o comprimento de onda. Isto é o equivalente a considerar que o feixe emitido, quando atinge a fenda, é aproximadamente uma onda plana e o modelo matemático utilizado será a aproximação de Fraunhofer.
+\paragraph*{Difração por uma fenda}
+Numa fase inicial, feixe incidirá numa fenda com uma determinada dimensão. Para esta disposição da montagem obter-se-á uma figura de difração a partir da qual se medirá os diferentes mínimos, e calcular-se-á a largura da fenda, através da seguinte relação:
+\begin{equation}
+s=\frac{m\lambda}{\sin(\arctan(\frac{Xm}{D})}
+\end{equation}
+\begin{equation}
+Xm=\frac{X_{min}+X_{max}}{4}
+\end{equation}
+Com $\lambda$ o comprimento de onda do feixe, Xm a distância do máximo central ao mínimo de ordem m, e D a distância da fenda ao alvo.
+O procedimento será então repetido, no entanto o feixe de luz incidirá num cabelo preso num suporte. Obter-se-á uma nova figura de difração que será confrontada com a anterior.
+\paragraph*{Difração por uma rede de N linhas}
+Nesta parte, incidir-se-á um feixe numa rede de difração de diversas linhas. Com a figura de difração obtida medir-se-á os máximos principais e a partir destes calcular-se-á a distância entre as fendas através da seguinte relação:
+\begin{equation}
+a=\frac{m\lambda}{\sin(\arctan(\frac{Xm}{D})}
+\end{equation}
+Para a rede de difração calcular-se-á ainda o poder de resolução da mesma através da seguinte relação:
+\begin{equation}
+R=mN
+\end{equation}
+\begin{equation}
+N=\frac{1}{a_{experimental}}\times\text{largura do feixe}
+\end{equation}
+Note-se que para N máximos principais, haverá (N-1) mínimos secundários e (N-2) máximos secundários.
+\paragraph*{Difração por uma fenda dupla}
+Nesta última parte da atividade, far-se-á incidir o feixe de luz numa fenda dupla e, usando um detetor CCD linear, registar-se-á o perfil das intensidades. Através do valor da largura da fenda, da distância entre as fendas e da distância entre o slide e o alvo simular-se-á o perfil obtido para a intensidade. Com este ficheiro é possível simular o perfil da figura de difração, ajustando-se interactivamente os parâmetros s e a. 
+\subsection*{Fórmulas dos Erros e Fórmulas Auxiliares}
+D: distância entre a fenda e o alvo (erro do instrumento)
+\begin{equation}
+e_{Xm}=\bigg\vert\frac{X_{min}-X_{max}}{4}\bigg\vert
+\end{equation}
+\begin{equation}
+e_s=\Bigg\vert-\frac{m \lambda D}{Xm^{2}\sqrt{\frac{Xm^2}{D^2}+1}}\Bigg\vert e_{Xm}+\Bigg\vert-\frac{m \lambda}{Xm\sqrt{\frac{Xm^2}{D^2}+1}}\Bigg\vert e_{D}
+\end{equation}
+Para a rede de N linhas as fórmulas são análogas, temos  que 
+eXm=Largura do ponto luminoso
+\section*{Tabelas}
+\begin{center}
+\includegraphics[width=1\textwidth]{tabelas1}
+\end{center}
+\newpage
+\begin{figure}
+\begin{center}
+\includegraphics[width=.7\textwidth]{fendac}
+\caption{Imagem obtida no software Caliens}
+\end{center}
+\end{figure}
+\section*{Conclusão}
+Inicialmente teve-se como objetivo medir a largura de uma fenda através da figura de difração produzida pela mesma quando nela se faz passar um laser. Para tal emitiu-se um feixe de radiação monocromática com um comprimento de onda 632,8nm, fazendo-o passar pela fenda C, com uma largura de 0,16mm. Tivemos o cuidado de nos assegurar que o alvo e a fenda estavam alinhados com o laser, de modo a eliminar erros associados a inclinações. Para uma dada distância da fenda ao alvo, colocou-se uma folha branca junto ao alvo, na qual se assinalaram os mínimos. Como os máximos de ordens distintas são separados por um mínimo correspondente, mediu-se a distância máxima e mínima entre cada mínimo de ordem igual, a partir da qual se obteve o valor da equação (1) e (2). Decidimos medir os mínimos ao invés dos máximos, pois era significativamente mais fácil visualizar a posição dos mesmos no alvo.\\
+Para a mesma fenda, foram traçadas as figuras de difração obtidas para duas distâncias distintas (1,734m e 1,925m), pelo que o comprimento da largura considerado corresponde à média das larguras obtidas em cada um dos cálculos. Obteve-se assim um valor para a largura da fenda de ($1,60\times10^{-4} \pm 1,17\times10^{-5}$)m, que corresponde a um desvio à exatidão de 7,56\%. 
+É de notar que o quociente entre o valor da distância utilizado e a largura da fenda é muito superior ao quociente entre a largura e o comprimento de onda. Como esta condição se verifica considera-se que a onda é aproximadamente plana, pelo que é possível utilizar o método de aproximação de Frauhnofer.
+O procedimento foi repetido utilizando um cabelo como obstáculo ao percurso do laser, tendo-se obtido, pelo método anterior, também a figura de difração deste. Confrontando as figuras de difração formadas pela fenda e pelo cabelo conclui-se que são geometricamente semelhantes, facto que pode ser explicado pelo Princípio de Babinet – o padrão de difração para uma fenda é igual para um objeto opaco da mesma forma e da mesma dimensão (cabelo), iluminado da mesma maneira.
+Nesta experiência, apesar das nossas tentativas, foi-nos impossível garantir que o alvo e as fendas estavam, em todos os momentos, perfeitamente na perpendicular do laser. Para além disso, é de notar a enorme instabilidade do alvo, que não ficou bem preso à mesa. Quando tentámos copiar a figura de difração do alvo para o papel, é possível que o alvo tenha oscilado um pouco. Tivemos, no entanto, o cuidado de segurar no mesmo. Em experiências futuras, aconselhamos a utilização de um alvo mais estável. Note-se também que é um pouco difícil diferenciar a posição exata dos mínimos e máximos, tendo-se feito uma estimativa, o que não corresponde ao valor exato. Em experiências futuras deverá considerar-se um método mais prático de anotação das posições dos máximos/mínimos.
+Na segunda parte da atividade repetiu-se o procedimento anterior utilizando-se, contudo, uma rede com 300 linhas em vez de apenas uma fenda. Através da distância entre os máximos obtidos no alvo e da distância alvo-fendas, foi possível calcular a distância entre as fendas, para o qual obtivemos um valor de $3,375x10^{-6}$m, com um erro de $5,55\times10^{-7}$m. Estimando-se o número de fendas iluminadas, obtivemos um valor de 889, sendo o número de máximos secundários 887 e 888 o número de mínimos secundários, entre os 889 máximos principais. Assim, a resolução obtida para a fenda utilizada na ordem m=1 é de 889.
+Por fim, apontámos o laser à câmara linear CCD, fazendo o laser passar, por uma dupla fenda. Ligando o sensor a um computador e utilizando o software Caliens, foi-nos possível obter a figura das intensidades das ondas após a dupla fenda. Através da simulação do software, ajustámos ao gráfico obtido diretamente uma figura simulada com parâmetros por nós inseridos. Assim, obtivemos o valor para a largura de cada fenda e a distância de separação das mesmas, tendo obtido um valor de 40$\lambda$m e 250$\lambda$m, respetivamente. É de notar que houve um certo erro associado ao software, causado pelo ajuste ad hoc. Assim, obtivemos a figura que nos pareceu mais próxima da real.
+
+
+\end{document}

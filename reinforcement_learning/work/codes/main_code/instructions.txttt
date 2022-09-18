@@ -1,0 +1,9 @@
+to run:
+-go to life.C path on terminal
+- make life
+-press enter for new iterations
+
+change setup variables:
+lines 217-228 of the code life.C
+
+don't change the paths hierarchy, LIBS folder must be on the same folder as the folder main_code

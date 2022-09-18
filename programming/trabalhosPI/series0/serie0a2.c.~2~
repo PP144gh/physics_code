@@ -1,0 +1,15 @@
+#include <stdio.h>
+int
+main()
+{
+  int i,r,n;
+  n=0;
+    i=8;
+    while (n<=10);
+      {
+	r= i * n;
+	printf(" %d x %d = %d\n", i,n,r);
+n= n+1;
+  }
+    return (0);
+      }

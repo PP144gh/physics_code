@@ -1,0 +1,46 @@
+#ifndef __POL__
+#define __POL__
+#include<string>
+#include<vector>
+using namespace std;
+
+class Pol {
+public:
+  Pol();
+  Pol(string, int);
+  Pol(string, int, int*);
+  Pol(string, int, vector<int>);
+  Pol(const Pol&);
+  Pol(Pol*);
+  int operator==(const Pol&);
+  Pol& operator=(const Pol&);
+  Pol& operator+=(const Pol&);
+  Pol& operator-=(const Pol&);
+  Pol& operator*=(const Pol&);
+  Pol operator+(const Pol&);
+  Pol operator-(const Pol&);
+  Pol operator*(const Pol&);
+  void SetPolynomial(int, int*);
+  void SetCoefficient(int, int);
+ 
+  void Print();
+  void PrintPol();
+  string GetNome();
+  int GetGrau();
+  int GetCoef(int);
+  void SetNome(string);
+  void SetGrau(int);
+  void SetCoef(int *);
+  void SetCoef(vector<double>);
+  double evaluate (double);
+  const Pol derivada();
+  ~Pol(){};
+private:
+  string nome;
+  int grau;
+  vector<double> coef;
+};
+
+vector<double> ruffini(Pol,double);
+double evaluate2(double,Pol);
+#endif

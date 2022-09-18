@@ -1,0 +1,12 @@
+//conditions
+  int maxage=10; //after maxage steps cells die
+  int maxswof=5; //max steps without food
+  int x; int y; //position variables
+  int dmax=100; //max steps of simulation
+  int minagesex=1; //min age for reproduction
+  int flagserial=-1;//cheat variable to generate 1 child per pair and not two
+  int gentrack=0;
+  int cellnumberinit=cellnumber;
+  // int dailyflimit=L*L*cellnumberinit;
+  int dailyflimit=10;
+    int poplim=50;

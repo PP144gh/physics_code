@@ -1,0 +1,23 @@
+
+ex28() {
+  TCanvas *c= new TCanvas();
+
+TGraphErrors g("data1.txt","%lg %lg");
+g.SetMarkerColor(2);
+g.SetMarkerStyle(20);
+g.SetMarkerSize(1);
+ c->Update();
+
+
+  g.SetTitle ("Index vs WaveLength for diamond");
+g.DrawClone("AP");
+
+ TF1 f ("law", "[0]+[1]/(x*x-0.028)+[2]/((x*x-0.028)*(x*x-0.028))+[3]*x*x+[4]*pow(x,4)",0,700);
+ f.SetLineColor(kBlue);
+ f.SetLineStyle(1);
+ g.Fit(&f);
+ f.DrawClone("same");
+ c->Update();
+
+ // c->Print("lol.png");
+}

@@ -1,0 +1,389 @@
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2014.10.4)  27 OCT 2014 07:43
+entering extended mode
+ %&-line parsing enabled.
+**groupB09Trab1.tex
+(./groupB09Trab1.tex
+LaTeX2e <2009/09/24>
+Babel <v3.8l> and hyphenation patterns for english, usenglishmax, dumylang, noh
+yphenation, portuguese, loaded.
+(/usr/share/texmf-texlive/tex/latex/base/article.cls
+Document Class: article 2007/10/19 v1.4h Standard LaTeX document class
+(/usr/share/texmf-texlive/tex/latex/base/size10.clo
+File: size10.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
+)
+\c@part=\count79
+\c@section=\count80
+\c@subsection=\count81
+\c@subsubsection=\count82
+\c@paragraph=\count83
+\c@subparagraph=\count84
+\c@figure=\count85
+\c@table=\count86
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen102
+)
+(/usr/share/texmf-texlive/tex/generic/babel/babel.sty
+Package: babel 2008/07/06 v3.8l The Babel package
+
+(/usr/share/texmf-texlive/tex/generic/babel/portuges.ldf
+Language: portuges 2008/03/18 v1.2q Portuguese support from the babel system
+
+(/usr/share/texmf-texlive/tex/generic/babel/babel.def
+File: babel.def 2008/07/06 v3.8l Babel common definitions
+\babel@savecnt=\count87
+\U@D=\dimen103
+)
+Package babel Info: Making " an active character on input line 145.
+))
+(/usr/share/texmf-texlive/tex/latex/base/inputenc.sty
+Package: inputenc 2008/03/30 v1.1d Input encoding file
+\inpenc@prehook=\toks14
+\inpenc@posthook=\toks15
+
+(/usr/share/texmf-texlive/tex/latex/base/latin9.def
+File: latin9.def 2008/03/30 v1.1d Input encoding file
+))
+(/usr/share/texmf-texlive/tex/latex/base/fontenc.sty
+Package: fontenc 2005/09/27 v1.99g Standard LaTeX package
+
+(/usr/share/texmf-texlive/tex/latex/base/t1enc.def
+File: t1enc.def 2005/09/27 v1.99g Standard LaTeX file
+LaTeX Font Info:    Redeclaring font encoding T1 on input line 43.
+))
+(/usr/share/texmf-texlive/tex/latex/base/fixltx2e.sty
+Package: fixltx2e 2006/09/13 v1.1m fixes to LaTeX
+LaTeX Info: Redefining \em on input line 420.
+)
+(/usr/share/texmf-texlive/tex/latex/setspace/setspace.sty
+Package: setspace 2000/12/01 6.7 Contributed and Supported LaTeX2e package
+
+Package: `setspace' 6.7 <2000/12/01>
+) (/usr/share/texmf-texlive/tex/latex/amsmath/amsmath.sty
+Package: amsmath 2000/07/18 v2.13 AMS math features
+\@mathmargin=\skip43
+
+For additional information on amsmath, use the `?' option.
+(/usr/share/texmf-texlive/tex/latex/amsmath/amstext.sty
+Package: amstext 2000/06/29 v2.01
+
+(/usr/share/texmf-texlive/tex/latex/amsmath/amsgen.sty
+File: amsgen.sty 1999/11/30 v2.0
+\@emptytoks=\toks16
+\ex@=\dimen104
+))
+(/usr/share/texmf-texlive/tex/latex/amsmath/amsbsy.sty
+Package: amsbsy 1999/11/29 v1.2d
+\pmbraise@=\dimen105
+)
+(/usr/share/texmf-texlive/tex/latex/amsmath/amsopn.sty
+Package: amsopn 1999/12/14 v2.01 operator names
+)
+\inf@bad=\count88
+LaTeX Info: Redefining \frac on input line 211.
+\uproot@=\count89
+\leftroot@=\count90
+LaTeX Info: Redefining \overline on input line 307.
+\classnum@=\count91
+\DOTSCASE@=\count92
+LaTeX Info: Redefining \ldots on input line 379.
+LaTeX Info: Redefining \dots on input line 382.
+LaTeX Info: Redefining \cdots on input line 467.
+\Mathstrutbox@=\box26
+\strutbox@=\box27
+\big@size=\dimen106
+LaTeX Font Info:    Redeclaring font encoding OML on input line 567.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 568.
+\macc@depth=\count93
+\c@MaxMatrixCols=\count94
+\dotsspace@=\muskip10
+\c@parentequation=\count95
+\dspbrk@lvl=\count96
+\tag@help=\toks17
+\row@=\count97
+\column@=\count98
+\maxfields@=\count99
+\andhelp@=\toks18
+\eqnshift@=\dimen107
+\alignsep@=\dimen108
+\tagshift@=\dimen109
+\tagwidth@=\dimen110
+\totwidth@=\dimen111
+\lineht@=\dimen112
+\@envbody=\toks19
+\multlinegap=\skip44
+\multlinetaggap=\skip45
+\mathdisplay@stack=\toks20
+LaTeX Info: Redefining \[ on input line 2666.
+LaTeX Info: Redefining \] on input line 2667.
+)
+(/usr/share/texmf-texlive/tex/latex/tools/enumerate.sty
+Package: enumerate 1999/03/05 v3.00 enumerate extensions (DPC)
+\@enLab=\toks21
+)
+(/usr/share/texmf-texlive/tex/latex/booktabs/booktabs.sty
+Package: booktabs 2005/04/14 v1.61803 publication quality tables
+\heavyrulewidth=\dimen113
+\lightrulewidth=\dimen114
+\cmidrulewidth=\dimen115
+\belowrulesep=\dimen116
+\belowbottomsep=\dimen117
+\aboverulesep=\dimen118
+\abovetopsep=\dimen119
+\cmidrulesep=\dimen120
+\cmidrulekern=\dimen121
+\defaultaddspace=\dimen122
+\@cmidla=\count100
+\@cmidlb=\count101
+\@aboverulesep=\dimen123
+\@belowrulesep=\dimen124
+\@thisruleclass=\count102
+\@lastruleclass=\count103
+\@thisrulewidth=\dimen125
+)
+(/usr/share/texmf-texlive/tex/latex/graphics/graphicx.sty
+Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
+
+(/usr/share/texmf-texlive/tex/latex/graphics/keyval.sty
+Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
+\KV@toks@=\toks22
+)
+(/usr/share/texmf-texlive/tex/latex/graphics/graphics.sty
+Package: graphics 2009/02/05 v1.0o Standard LaTeX Graphics (DPC,SPQR)
+
+(/usr/share/texmf-texlive/tex/latex/graphics/trig.sty
+Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
+)
+(/etc/texmf/tex/latex/config/graphics.cfg
+File: graphics.cfg 2009/08/28 v1.8 graphics configuration of TeX Live
+)
+Package graphics Info: Driver file: pdftex.def on input line 91.
+
+(/usr/share/texmf-texlive/tex/latex/pdftex-def/pdftex.def
+File: pdftex.def 2010/03/12 v0.04p Graphics/color for pdfTeX
+\Gread@gobject=\count104
+))
+\Gin@req@height=\dimen126
+\Gin@req@width=\dimen127
+)
+(/usr/share/texmf-texlive/tex/latex/tools/multicol.sty
+Package: multicol 2008/12/05 v1.6h multicolumn formatting (FMi)
+\c@tracingmulticols=\count105
+\mult@box=\box28
+\multicol@leftmargin=\dimen128
+\c@unbalance=\count106
+\c@collectmore=\count107
+\doublecol@number=\count108
+\multicoltolerance=\count109
+\multicolpretolerance=\count110
+\full@width=\dimen129
+\page@free=\dimen130
+\premulticols=\dimen131
+\postmulticols=\dimen132
+\multicolsep=\skip46
+\multicolbaselineskip=\skip47
+\partial@page=\box29
+\last@line=\box30
+\mult@rightbox=\box31
+\mult@grightbox=\box32
+\mult@gfirstbox=\box33
+\mult@firstbox=\box34
+\@tempa=\box35
+\@tempa=\box36
+\@tempa=\box37
+\@tempa=\box38
+\@tempa=\box39
+\@tempa=\box40
+\@tempa=\box41
+\@tempa=\box42
+\@tempa=\box43
+\@tempa=\box44
+\@tempa=\box45
+\@tempa=\box46
+\@tempa=\box47
+\@tempa=\box48
+\@tempa=\box49
+\@tempa=\box50
+\@tempa=\box51
+\c@columnbadness=\count111
+\c@finalcolumnbadness=\count112
+\last@try=\dimen133
+\multicolovershoot=\dimen134
+\multicolundershoot=\dimen135
+\mult@nat@firstbox=\box52
+\colbreak@box=\box53
+)
+(/usr/share/texmf-texlive/tex/latex/graphics/color.sty
+Package: color 2005/11/14 v1.0j Standard LaTeX Color (DPC)
+
+(/etc/texmf/tex/latex/config/color.cfg
+File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
+)
+Package color Info: Driver file: pdftex.def on input line 130.
+)
+(/usr/share/texmf-texlive/tex/latex/ltxmisc/capt-of.sty)
+(/usr/share/texmf-texlive/tex/latex/mdwtools/mdwlist.sty
+Package: mdwlist 1996/05/02 1.1 Various list-related things
+)
+(/usr/share/texmf-texlive/tex/latex/amsfonts/amssymb.sty
+Package: amssymb 2009/06/22 v3.00
+
+(/usr/share/texmf-texlive/tex/latex/amsfonts/amsfonts.sty
+Package: amsfonts 2009/06/22 v3.00 Basic AMSFonts support
+\symAMSa=\mathgroup4
+\symAMSb=\mathgroup5
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 96.
+))
+(/usr/share/texmf-texlive/tex/latex/listings/listings.sty
+\lst@mode=\count113
+\lst@gtempboxa=\box54
+\lst@token=\toks23
+\lst@length=\count114
+\lst@currlwidth=\dimen136
+\lst@column=\count115
+\lst@pos=\count116
+\lst@lostspace=\dimen137
+\lst@width=\dimen138
+\lst@newlines=\count117
+\lst@lineno=\count118
+\lst@maxwidth=\dimen139
+
+(/usr/share/texmf-texlive/tex/latex/listings/lstmisc.sty
+File: lstmisc.sty 2007/02/22 1.4 (Carsten Heinz)
+\c@lstnumber=\count119
+\lst@skipnumbers=\count120
+\lst@framebox=\box55
+)
+(/usr/share/texmf-texlive/tex/latex/listings/listings.cfg
+File: listings.cfg 2007/02/22 1.4 listings configuration
+))
+Package: listings 2007/02/22 1.4 (Carsten Heinz)
+
+(/usr/share/texmf-texlive/tex/latex/listings/lstlang1.sty
+File: lstlang1.sty 2004/09/05 1.3 listings language file
+)
+No file groupB09Trab1.aux.
+\openout1 = `groupB09Trab1.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 59.
+LaTeX Font Info:    ... okay on input line 59.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 59.
+LaTeX Font Info:    ... okay on input line 59.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 59.
+LaTeX Font Info:    ... okay on input line 59.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 59.
+LaTeX Font Info:    ... okay on input line 59.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 59.
+LaTeX Font Info:    ... okay on input line 59.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 59.
+LaTeX Font Info:    ... okay on input line 59.
+(/usr/share/texmf-texlive/tex/context/base/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count121
+\scratchdimen=\dimen140
+\scratchbox=\box56
+\nofMPsegments=\count122
+\nofMParguments=\count123
+\everyMPshowfont=\toks24
+\MPscratchCnt=\count124
+\MPscratchDim=\dimen141
+\MPnumerator=\count125
+\everyMPtoPDFconversion=\toks25
+)
+\c@lstlisting=\count126
+ <images.png, id=1, 97.36375pt x 118.4425pt>
+File: images.png Graphic file (type png)
+ <use images.png>
+Underfull \hbox (badness 10000) in paragraph at lines 74--74
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 74--74
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 74--74
+
+ []
+
+LaTeX Font Info:    Try loading font information for U+msa on input line 74.
+(/usr/share/texmf-texlive/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2009/06/22 v3.00 AMS symbols A
+)
+LaTeX Font Info:    Try loading font information for U+msb on input line 74.
+
+(/usr/share/texmf-texlive/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2009/06/22 v3.00 AMS symbols B
+)
+Underfull \hbox (badness 10000) in paragraph at lines 74--74
+
+ []
+
+
+Overfull \hbox (6.5026pt too wide) in paragraph at lines 74--75
+[][] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 90--95
+
+ []
+
+[1
+
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} <./images.png (PNG copy)>]
+Underfull \hbox (badness 10000) in paragraph at lines 129--130
+
+ []
+
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 136.
+
+(/usr/share/texmf-texlive/tex/latex/base/omscmr.fd
+File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <8> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 136.
+
+Underfull \hbox (badness 10000) in paragraph at lines 156--157
+[]\T1/cmr/m/n/10 Por exem-plo, para o cons-tru-tor do tipo
+ []
+
+[2] [3] (./groupB09Trab1.aux)
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+ ) 
+Here is how much of TeX's memory you used:
+ 4933 strings out of 495041
+ 60339 string characters out of 1181897
+ 198066 words of memory out of 3000000
+ 8055 multiletter control sequences out of 15000+50000
+ 15523 words of font info for 36 fonts, out of 3000000 for 9000
+ 30 hyphenation exceptions out of 8191
+ 27i,8n,36p,1119b,1967s stack positions out of 5000i,500n,10000p,200000b,50000s
+ </home/pedro/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecti1000.600pk> </home/p
+edro/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm0700.600pk> </home/pedro/.texmf
+-var/fonts/pk/ljfour/jknappen/ec/ecrm0800.600pk> </home/pedro/.texmf-var/fonts/
+pk/ljfour/jknappen/ec/ecrm0500.600pk> </home/pedro/.texmf-var/fonts/pk/ljfour/j
+knappen/ec/ecbx1200.600pk> </home/pedro/.texmf-var/fonts/pk/ljfour/jknappen/ec/
+ecbx1440.600pk> </home/pedro/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm0900.60
+0pk> </home/pedro/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx0900.600pk> </home
+/pedro/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx0700.600pk> </home/pedro/.tex
+mf-var/fonts/pk/ljfour/jknappen/ec/ecbx1000.600pk> </home/pedro/.texmf-var/font
+s/pk/ljfour/jknappen/ec/ecrm1000.600pk></usr/share/texmf-texlive/fonts/type1/pu
+blic/amsfonts/cm/cmmi10.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfon
+ts/cm/cmmi7.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr10.
+pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/sha
+re/texmf-texlive/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-te
+xlive/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/share/texmf-texlive/fonts/
+type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texmf-texlive/fonts/type1/public
+/amsfonts/cm/cmsy8.pfb>
+Output written on groupB09Trab1.pdf (3 pages, 175683 bytes).
+PDF statistics:
+ 368 PDF objects out of 1000 (max. 8388607)
+ 0 named destinations out of 1000 (max. 500000)
+ 6 words of extra memory for PDF output out of 10000 (max. 10000000)
+

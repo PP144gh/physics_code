@@ -1,0 +1,29 @@
+# $@    Nome da regra. 
+# $<    Nome da primeira dependência 
+# $^     Lista de dependências
+# $?     Lista de dependências mais recentes que a regra.
+# $*     Nome do arquivo sem sufixo
+
+
+
+# Variable Declarations
+CC = g++
+
+##root links
+CFLAGS = -c -g -Wall `root-config --cflags`
+LDFLAGS := `root-config --glibs`
+
+SOURCES= Diamond.C cFCgraphics.C
+OBJECTS= $(SOURCES:.C=.o)
+EXECUTABLE = Diamond
+FCgr := -I ../../../LIBs 
+
+
+# Dependancies and compilation routines for optimized recompiling
+Diamond: $(EXECUTABLE) 
+ $(EXECUTABLE): $(OBJECTS)
+	$(CC) -o $@ $(OBJECTS) $(FCgr) $(LDFLAGS) 
+.C.o: 
+	$(CC)  $(FCgr) $(CFLAGS)  $< -o $@ 
+clean:
+	rm -rf *.o $(EXECUTABLE)

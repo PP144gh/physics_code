@@ -1,0 +1,105 @@
+#include<iostream>
+#include<cmath>
+#include <string>
+
+using namespace std;
+#include "cFCgraphics.h"
+#include"Diamond.h"
+#ifndef __CINT__
+#include <TGraphErrors.h>
+#include <TF1.h>
+#include <TROOT.h>
+#include <TGFrame.h> //gClient
+#include <TPad.h>
+#include <TCanvas.h>
+#include <TSystem.h>
+#include <TList.h>
+#include <TApplication.h>
+#include <TVirtualX.h>
+
+#endif
+
+Diamond:: Diamond(){
+  name="Diamond";
+ index=NULL;
+  }
+
+
+Diamond:: Diamond(TF1* x){
+  name="Diamond";
+  index=x;
+  }
+
+
+
+
+void Diamond:: SetRefractiveIndex(){
+    TF1 *f = new TF1 ("law", "[0]+[1]/(pow(x,2)-0.028)+[2]/((pow(x,2)-0.028)*(pow(x,2)-0.028))+[3]*pow(x,2)+[4]*pow(x,4)",0,700);
+ index=f;
+}
+
+TF1* Diamond:: GetRefractiveIndex(){
+  return index;
+}
+
+void Diamond::FitRefractiveIndex(TGraphErrors *g) {
+
+
+  index->SetLineColor(kBlue);
+  index->SetLineStyle(1);
+  g->Fit(index);
+
+ 
+}
+
+TGraphErrors* Diamond:: DrawRefractiveIndex() {
+
+  TGraphErrors *g = new TGraphErrors("data1.txt","%lg %lg");
+  g->SetMarkerColor(2);
+  g->SetMarkerStyle(20);
+  g->SetMarkerSize(1);
+
+  g->SetTitle ("Index vs WaveLength for diamond");
+  //   g->DrawClone("AP");
+
+  return g;
+
+}
+
+// void Diamond:: DrawRefractiveIndex() { 
+
+//  index->DrawClone("same");
+// }
+
+
+int main(int argc, char** argv) {
+
+  cFCgraphics gr;
+  Diamond d;
+  
+  d.DrawRefractiveIndex();
+    gr.AddObject(d.DrawRefractiveIndex());
+    gr.Draw();
+  d.SetRefractiveIndex();
+  d.FitRefractiveIndex(d.DrawRefractiveIndex());
+ gr.AddObject(d.DrawRefractiveIndex());
+ //  gr.AddObject(d.GetRefractiveIndex());
+  //  c->Draw();
+  // c->Update();
+  //a.Run();
+  cout << "lol"<< endl;
+
+  
+   gr.ListObjects();
+    gr.Draw();
+
+   gr.Print("Diamond.png");
+ 
+
+
+  return 0;
+}
+
+
+
+
