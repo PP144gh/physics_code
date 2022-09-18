@@ -1,0 +1,120 @@
+\documentclass[10pt,a4paper]{article}
+%\usepackage[hmarginratio=1:1,top=32mm,columnsep=20pt]{geometry}
+\usepackage[left=1cm,right=1cm,top=1.1cm,bottom=1.2cm]{geometry}
+%\usepackage{fullpage}
+\usepackage[utf8]{inputenc}
+\usepackage[portuguese]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\rmfamily
+\DeclareFontShape{T1}{lmr}{bx}{sc} { <-> ssub * cmr/bx/sc }{}
+\usepackage{microtype} % Slightly tweak font spacing for aesthetics
+\usepackage{multicol}
+\usepackage{indentfirst}
+\usepackage[pdftex,bookmarks=true,unicode=true, hidelinks]{hyperref}
+\usepackage{lettrine} % The lettrine is the first enlarged letter at the beginning of the text
+\setlength{\columnsep}{0.5cm}
+
+\usepackage{supertabular}
+\usepackage[pdftex]{graphicx}
+\usepackage{epstopdf}
+\usepackage{graphics}
+\usepackage{placeins}
+
+\usepackage{booktabs}
+\usepackage{lipsum}
+\usepackage{verbatim}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{bm}
+\usepackage{chemfig}
+\usepackage{siunitx}
+\usepackage{breakurl}
+\urlstyle{rm}
+
+%Tabelas e figuras
+\usepackage{float} % Required for tables and figures in the multi-column environment - they need to be placed in specific locations with the [H]
+\usepackage{graphicx}
+\usepackage{capt-of}
+\usepackage[hang, footnotesize,labelfont=bf,up,textfont=up]{caption} % Custom captions under/above floats in tables or figures
+\usepackage{subcaption}
+\usepackage{enumitem}
+\setitemize{noitemsep,topsep=0pt,parsep=0pt,partopsep=0pt}
+\setenumerate{noitemsep,topsep=0pt,parsep=0pt,partopsep=0pt}
+\usepackage{multirow}
+\usepackage{tabularx}
+\newcolumntype{C}{>{\centering\arraybackslash}X}
+\newcolumntype{R}{>{\raggedleft\arraybackslash}X}
+\newcolumntype{L}{>{\raggedright\arraybackslash}X}
+%\begin{table}[htbp]
+%  \centering
+%  \caption{caption}
+%\begin{tabularx}{\textwidth}{|c *{n}{|Y}|}\hline 
+\usepackage{longtable}
+
+\input epsf
+
+%Font customization
+\usepackage{abstract} % Allows abstract customization
+\renewcommand{\abstractnamefont}{\normalfont\bfseries} % Set the "Abstract" text to bold
+\renewcommand{\abstracttextfont}{\normalfont\small\itshape} % Set the abstract itself to small italic text
+\usepackage{titlesec} % Allows customization of titles
+\renewcommand\thesection{\Roman{section}} % Roman numerals for the sections
+\renewcommand\thesubsection{\arabic{subsection}} % Roman numerals for subsections
+\titleformat{\section}[block]{\Large\scshape\centering\bfseries}{\thesection.}{1em}{} % Change the look of the section titles
+\titleformat{\subsection}[block]{\large\bfseries}{\thesubsection.}{1em}{} % Change the look of the section titles
+\titleformat{\subsubsection}[block]{\normalsize\bfseries}{\thesubsubsection.}{1em}{} % Change the look of the section titles
+\usepackage{color}
+\usepackage{soulutf8}
+\setul{1.6pt}{.4pt}
+\newcommand{\hlc}[2][yellow]{ {\sethlcolor{#1} \hl{#2}} }
+
+\title{\vspace{-10mm}\fontsize{24pt}{10pt}\selectfont\textbf{Problema de 3 Corpos}\vspace{-5pt}} % Article title
+
+
+\author{\normalsize{Miguel Ribeiro (79013), Pedro Pereira (78889)}\\ % Your name
+\normalsize Instituto Superior Técnico\\
+\normalsize Mecânica Analítica \\
+\normalsize Professor José Guilherme Milhano
+\vspace{-5mm}
+}
+%\normalsize \href{mailto:john@smith.com}{john@smith.com} % Your email address
+
+\date{}
+
+\renewcommand{\baselinestretch}{1} 
+\begin{document}
+%----------------------------------------------------------------------------------------
+%	TITLE SECTION
+%----------------------------------------------------------------------------------------
+\maketitle % Insert title
+
+%----------------------------------------------------------------------------------------
+%	ABSTRACT
+%----------------------------------------------------------------------------------------
+%----------------------------------------------------------------------------------------
+%	ARTICLE CONTENTS
+%----------------------------------------------------------------------------------------
+
+\begin{multicols}{2} % Two-column layout throughout the main article text
+
+\section{Introdução}
+
+\medskip
+\begingroup
+  \centering
+  \includegraphics[width=0.95\columnwidth]{placeholder.jpg}
+  \captionof{figure}{true story.}
+\endgroup
+\medskip
+
+
+
+%------------------------------------------------
+\begin{thebibliography}{99} % Bibliography - this is intentionally simple in this template
+
+\bibitem{paper} T. Guan. {\em Special cases of the thee body problem}
+\end{thebibliography}
+\end{multicols}
+
+\end{document}

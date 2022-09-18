@@ -1,0 +1,7 @@
+opcao:grafico
+titulo: Lei Arctan - Face B;d [cm];Hoff[ Oe ]
+func: [0]+[1]*x
+xmin:0
+xmax:0.2
+ymin:3
+ymax:7

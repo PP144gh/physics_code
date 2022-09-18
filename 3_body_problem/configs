@@ -1,0 +1,547 @@
+sol interessantes
+desvios da triangular
+1 brincadeiras a 3, empurra 1, puxa outra vez e manda de volta 1 : 
+configs
+spScale = 8;
+a = 3/2;
+b = 4/2;
+c = 5/2;
+scalevel = 10;
+mA = 1;
+xA0 = c/2;
+yA0 = b/2;
+zA0 = 0;
+vxA0 = a/scalevel;
+vyA0 = -b/scalevel;
+vzA0 = 0;
+
+mB = 1;
+xB0 = 0;
+yB0 = -b/2;
+zB0 = 0;
+vxB0 = -c/scalevel;
+vyB0 = 0;
+vzB0 = 0;
+
+mC = 1;
+xC0 = -c/2;
+yC0 = b/2;
+zC0 = 0;
+vxC0 = b/scalevel;
+vyC0 = a/scalevel;
+vzC0 = 0;
+
+2 - brincadeiras a 3 e expulsao direta de 1
+configs
+spScale = 8;
+a = 3/2;
+b = 4/2;
+c = 5/2;
+scalevel = 8;
+mA = 1;
+xA0 = c/2;
+yA0 = b/2;
+zA0 = 0;
+vxA0 = a/scalevel;
+vyA0 = -b/scalevel;
+vzA0 = 0;
+
+mB = 1;
+xB0 = 0;
+yB0 = -b/2;
+zB0 = 0;
+vxB0 = -c/scalevel;
+vyB0 = 0;
+vzB0 = 0;
+
+mC = 0.25;
+xC0 = -c/2;
+yC0 = b/2;
+zC0 = 0;
+vxC0 = b/scalevel;
+vyC0 = a/scalevel;
+vzC0 = 0;
+
+3 - colisao
+configs
+spScale = 8;
+a = 3/2;
+b = 4/2;
+c = 5/2;
+scalevel = 10;
+mA = 1;
+xA0 = c/2;
+yA0 = b/2;
+zA0 = 0;
+vxA0 = a/scalevel;
+vyA0 = -b/scalevel;
+vzA0 = 0;
+
+mB = 0.5;
+xB0 = 0;
+yB0 = -b/2;
+zB0 = 0;
+vxB0 = -c/scalevel;
+vyB0 = 0;
+vzB0 = 0;
+
+mC = 1;
+xC0 = -c/2;
+yC0 = b/2;
+zC0 = 0;
+vxC0 = b/scalevel;
+vyC0 = a/scalevel;
+vzC0 = 0;
+
+4 - 2 planetas + asteroide
+spScale = 8;
+a = 3/2;
+b = 4/2;
+c = 5/2;
+scalevel = 10;
+mA = 1;
+xA0 = c/2;
+yA0 = b/2;
+zA0 = 0;
+vxA0 = a/scalevel;
+vyA0 = -b/scalevel;
+vzA0 = 0;
+
+mB = 0.001;
+xB0 = 0;
+yB0 = -b/2;
+zB0 = 0;
+vxB0 = -c/scalevel;
+vyB0 = 0;
+vzB0 = 0;
+
+mC = 1;
+xC0 = -c/2;
+yC0 = b/2;
+zC0 = 0;
+vxC0 = b/scalevel;
+vyC0 = a/scalevel;
+vzC0 = 0;
+
+5 - estrela + planeta + lua (orbita caotica mas bounded)
+spScale = 8;
+a = 3/2;
+b = 4/2;
+c = 5/2;
+scalevel = 10;
+mA = 1;
+xA0 = c/2;
+yA0 = b/2;
+zA0 = 0;
+vxA0 = a/scalevel;
+vyA0 = -b/scalevel;
+vzA0 = 0;
+
+mB = 0.001;
+xB0 = 0;
+yB0 = -b/2;
+zB0 = 0;
+vxB0 = -c/scalevel;
+vyB0 = 0;
+vzB0 = 0;
+
+mC = 0.5;
+xC0 = -c/2;
+yC0 = b/2;
+zC0 = 0;
+vxC0 = b/scalevel;
+vyC0 = a/scalevel;
+vzC0 = 0;
+
+6- orbitas circulares dos 2 mais pesados
+scalevel = 10;
+mA = 1;
+xA0 = c*2;
+yA0 = b/2;
+zA0 = 0;
+vxA0 = a/scalevel;
+vyA0 = -b/scalevel;
+vzA0 = 0;
+
+mB = 0.001;
+xB0 = 0;
+yB0 = -b/2;
+zB0 = 0;
+vxB0 = -c/scalevel;
+vyB0 = 0;
+vzB0 = 0;
+
+mC = 0.5;
+xC0 = -c*2;
+yC0 = b/2;
+zC0 = 0;
+vxC0 = b/scalevel;
+vyC0 = a/scalevel;
+vzC0 = 0;
+7- orbitas circulas dos 2 + pesados + orbita caotica do + leve
+spScale = 8;
+a = 3/2;
+b = 4/2;
+c = 5/2;
+scalevel = 10;
+mA = 1;
+xA0 = c*2;
+yA0 = b/2;
+zA0 = 0;
+vxA0 = a/scalevel;
+vyA0 = -b/scalevel;
+vzA0 = 0;
+
+mB = 0.001;
+xB0 = -c*2;
+yB0 = -b/2;
+zB0 = 0;
+vxB0 = -c/scalevel;
+vyB0 = 0;
+vzB0 = 0;
+
+mC = 0.5;
+xC0 = -c*2;
+yC0 = b/2;
+zC0 = 0;
+vxC0 = b/scalevel;
+vyC0 = a/scalevel;
+vzC0 = 0;
+
+8- orbitas circulares, mais pesado no meio, medio a seguir e mais leve a orbitar o medio
+spScale = 8;
+a = 3/2;
+b = 4/2;
+c = 5/2;
+scalevel = 10;
+mA = 1;
+xA0 = c*2;
+yA0 = b/2;
+zA0 = 0;
+vxA0 = a/scalevel;
+vyA0 = -b/scalevel;
+vzA0 = 0;
+
+mB = 0.001;
+xB0 = -c*2;
+yB0 = b;
+zB0 = 0;
+vxB0 = -c/scalevel;
+vyB0 = 0;
+vzB0 = 0;
+
+mC = 0.5;
+xC0 = -c*2;
+yC0 = b/2;
+zC0 = 0;
+vxC0 = b/scalevel;
+vyC0 = a/scalevel;
+vzC0 = 0;
+
+9 - terra lua sol + preciso e fixe
+
+spScale = 8;
+a = 3/2;
+b = 4/2;
+c = 5/2;
+scalevel = 10;
+mA = 1;
+xA0 = c*2;
+yA0 = b/2;
+zA0 = 0;
+vxA0 = a/scalevel;
+vyA0 = -b/scalevel;
+vzA0 = 0;
+
+mB = 0.0001;
+xB0 = -c*2;
+yB0 = b;
+zB0 = 0;
+vxB0 = -c/scalevel;
+vyB0 = 0;
+vzB0 = 0;
+
+mC = 0.25;
+xC0 = -c*2;
+yC0 = b/2;
+zC0 = 0;
+vxC0 = b/scalevel;
+vyC0 = a/scalevel;
+vzC0 = 0;
+10 - orbita bue fixe 2 corpos iguais e corpo 10x mais pesado que eles
+spScale = 8;
+a = 2/2;
+b = 4/2;
+c = 5/2;
+scalevel = 10;
+mA = 1;
+xA0 = c*2;
+yA0 = b/2;
+zA0 = 0;
+vxA0 = a/scalevel;
+vyA0 = -b/scalevel;
+vzA0 = 0;
+
+mB = 0.1;
+xB0 = -c*2;
+yB0 = b;
+zB0 = 0;
+vxB0 = -c/scalevel;
+vyB0 = 0;
+vzB0 = 0;
+
+mC = 0.1;
+xC0 = -c*2;
+yC0 = b/2;
+zC0 = 0;
+vxC0 = b/scalevel;
+vyC0 = a/scalevel;
+vzC0 = 0;
+
+orbita estavel 1 corpo mt mais pesado qe os oturos 2
+scalevel = 10;
+mA = 1;
+xA0 = c*2;
+yA0 = b/2;
+zA0 = 0;
+vxA0 = a/scalevel;
+vyA0 = -b/scalevel;
+vzA0 = 0;
+
+mB = 0.00000004;
+xB0 = -c*2;
+yB0 = b;
+zB0 = 0;
+vxB0 = -c/(scalevel*100);
+vyB0 = 0;
+vzB0 = 0;
+
+mC = 0.000003;
+xC0 = -c*2;
+yC0 = b/2;
+zC0 = 0;
+vxC0 = b/scalevel;
+vyC0 = a/scalevel;
+vzC0 = 0;
+
+eletrico
+cruzamentos
+spScale = 8;
+a = 3/2;
+b = 4/2;
+c = 5/2;
+scalevel = 50;
+mA = 1;
+qA = 1;
+xA0 = c;
+yA0 = 0;
+zA0 = 0;
+vxA0 = 0.0001;
+vyA0 = -0.01;
+vzA0 = 0;
+
+mB = 1;
+qB = -1;
+xB0 = -c*2;
+yB0 = b;
+zB0 = 0;
+vxB0 = -c/scalevel;
+vyB0 = 0;
+vzB0 = 0;
+
+mC = 1;
+qC = 0.2;
+xC0 = -c;
+yC0 = 0;
+zC0 = 0;
+vxC0 = 0.0001;
+vyC0 = -0.01;
+vzC0 = 0;
+
+calibração
+spScale = 8;
+a = 3/2;
+b = 4/2;
+c = 5/2;
+scalevel = 50;
+mA = 1;
+qA = 1;
+xA0 = 0;
+yA0 = 0;
+zA0 = 0;
+vxA0 = 0;
+vyA0 = 0;
+vzA0 = 0;
+
+mB = 1;
+qB = -1;
+xB0 = 8;
+yB0 = 0;
+zB0 = 0;
+vxB0 = 0;
+vyB0 = 0;
+vzB0 = 0;
+
+mC = 1;
+qC = 0;
+xC0 = -c;
+yC0 = 0;
+zC0 = 0;
+vxC0 = 0;
+vyC0 = 0;
+vzC0 = 0;
+
+calibraçao2 (com os 3 corpos)
+spScale = 8;
+a = 3/2;
+b = 4/2;
+c = 5/2;
+scalevel = 50;
+mA = 1;
+qA = -1;
+xA0 = 0;
+yA0 = 0;
+zA0 = c;
+vxA0 = 0;
+vyA0 = 0;
+vzA0 = 0;
+
+mB = 1;
+qB = -1;
+xB0 = 0;
+yB0 = 0;
+zB0 = -c;
+vxB0 = 0;
+vyB0 = 0;
+vzB0 = 0;
+
+mC = 1;
+qC = 0.5;
+xC0 = 0;
+yC0 = 0;
+zC0 = 0;
+vxC0 = 0;
+vyC0 = 0;
+vzC0 = 0;
+
+
+terra+lua+sol realista
+spScale = 8;
+a = 3/2;
+b = 4/2;
+c = 5/2;
+scalevel = 10;
+mA = 1;
+xA0 = c*2;
+yA0 = b/2;
+zA0 = 0;
+vxA0 = a/scalevel;
+vyA0 = -b/scalevel;
+vzA0 = 0;
+
+mB = 0.00000001;
+xB0 = -3*c;
+yB0 = b/100;
+zB0 = 0;
+vxB0 = -c/(scalevel*1000);
+vyB0 = 0;
+vzB0 = 0;
+
+mC = 0.000001;
+xC0 = -3*c;
+yC0 = 0;
+zC0 = 0;
+vxC0 = b/(scalevel*100);
+vyC0 = a/(scalevel*100);
+vzC0 = 0;
+
+atomo
+
+spScale = 8;
+a = 3/2;
+b = 4/2;
+c = 5/2;
+scalevel = 50;
+mA = 1;
+qA = -1;
+xA0 = 0;
+yA0 = 0;
+zA0 = c;
+vxA0 = c/scalevel;
+vyA0 = 0;
+vzA0 = 0;
+
+mB = 1;
+qB = -1;
+xB0 = 0;
+yB0 = 0;
+zB0 = -c;
+vxB0 = -c/scalevel;
+vyB0 = 0;
+vzB0 = 0;
+
+mC = 1;
+qC = 1;
+xC0 = 0;
+yC0 = 0;
+zC0 = 0;
+vxC0 = 0;
+vyC0 = 0;
+vzC0 = 0;
+
+orbita estavel 3D
+spScale = 8;
+a = 3/2;
+b = 4/2;
+c = 5/2;
+scalevel = 10;
+mA = 1;
+xA0 = -c*2;
+yA0 = b/2;
+zA0 = 0;
+vxA0 = a/scalevel;
+vyA0 = -b/scalevel;
+vzA0 = 0;
+
+mB = 0.0001;
+xB0 = 0.3*c/2;
+yB0 = 0.8660254037844387 + b/2;
+zB0 = 0;
+vxB0 = 0;
+vyB0 = 0;
+vzB0 = -c/scalevel;
+
+mC = 0.25;
+xC0 = c*2;
+yC0 = b/2;
+zC0 = 0;
+vxC0 = b/scalevel;
+vyC0 = a/scalevel;
+vzC0 = 0;
+
+orbita estavel 3D 2
+mA = 1*2;
+xA0 = -c*2;
+yA0 = 0;
+zA0 = 0;
+vxA0 = a/scalevel;
+vyA0 = -b/scalevel;
+vzA0 = 0;
+
+(*L4 xB0=-c*2+0.3*c*2*2;
+yB0=0.8660254037844387*c*2*2;*)
+mB = 0.00001;
+xB0 = -c*2 + 0.3*c*2*2;
+yB0 = 0.8660254037844387*c*2*2 + c/2;
+zB0 = c/2;
+vxB0 = 0;
+vyB0 = 0;
+vzB0 = c/(scalevel*1);
+
+mC = 0.25;
+xC0 = c*2;
+yC0 = 0;
+zC0 = 0;
+vxC0 = b/scalevel;
+vyC0 = a/scalevel;
+vzC0 = 0;

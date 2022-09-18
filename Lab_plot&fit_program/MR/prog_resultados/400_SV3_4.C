@@ -1,0 +1,375 @@
+#include "TROOT.h"  //Principal
+#include "TFrame.h"  //gClient
+#include"DataInterpolator.h"
+#include <TAxis.h>
+#include"cFCgraphics.h"
+#include<TROOT.h>
+#include<TGraphErrors.h>
+#include<TMultiGraph.h>
+#include<TF1.h>
+#include<TGraph.h>
+#include<TCanvas.h>
+#include<TPad.h>
+#include<iostream>
+#include<iomanip>
+#include<TLine.h>
+#include<TLatex.h>
+#include<TArrow.h>
+#include<TLegend.h>
+#include<TText.h>
+#include<TPaveText.h>
+#include<fstream>
+
+
+#include "TApplication.h"  //Janela
+
+#include <algorithm>    // std::min_element, std::max_element
+#include <cmath>
+
+using namespace std;
+
+
+
+int main(int argc, char **argv)
+{
+
+
+  gROOT->SetBatch(kFALSE);
+
+  //faz aparecer o canvas
+  TApplication theApp("App",&argc, argv);
+  theApp.InitializeGraphics();
+
+
+  static int Ngraphs=8;
+
+  //COISAS A PREENCHER PARA CADA ANALISE!!!////////////////////////
+  string plot_label="SV3_4_400.pdf"; //Nome do ficheiro em que e feito o plot MR(H)
+
+
+  string file1="../4s/data/SV3_4_400_2a.txt";  
+
+
+  string file2="../4s/data/SV3_4_400_2b.txt"; 
+
+  double I=0.001004;
+
+
+
+  double eI=0.0000001;//erro corrente
+  double eV = 0.000001; //erro tensao
+  double eh = 0.1;//erro campo !!!!! TOU A POR ASSIM PARA O FIT DAR, MAS NA VERDADE O ERRO E 0.1 !!!!!!! 
+
+
+  //FIM DAS COISAS PARA PREENCHER A CADA ANALISE///////////////////
+
+
+  /////////////////////////Tirar os dados do file 1 - varrimento 1////////////////////////////
+  ifstream file;
+  file.open (file1.c_str());
+
+  static int N=0;
+
+  N=0;
+  char cur = '\0';
+  char last = '\0';
+
+  while (file.get(cur)) {
+      if (cur == '\n' ||
+          (cur == '\f' && last == '\r')){
+         N++;
+      }
+  }
+
+  //N--;
+  
+  cout << N << endl;
+
+  double *H = new double[N];
+  double *R = new double[N];
+  double *eR = new double[N];
+
+
+  file.close();
+  file.open (file1.c_str());
+
+  int i=0;
+  int test=0;
+  while(!file.eof() && test==0)
+    {
+
+      file >> H[i] >> R[i]; // extracts 2 floating point values seperated by whitespace
+      R[i]=R[i]/I; //PASSAR TENSOES PARA RESISTENCIAS
+      eR[i] = eV/I + R[i]/I*eI; //erro resistencia
+      i++; 
+
+
+      if(i>=N)
+	test=1;
+
+    }
+
+
+
+
+  ///////////////////Tirar os dados do file 2 - varrimento 2////////////////////////////
+  ifstream file_2;
+  file_2.open(file2.c_str());
+
+
+  double *H2 = new double[N];
+  double *R2 = new double[N];
+  double *eR2 = new double[N];
+
+  file_2.close();
+  file_2.open (file2.c_str());
+
+  i=0;
+  test=0;
+  while(!file_2.eof() && test==0)
+    {
+      file_2 >> H2[i] >> R2[i]; // extracts 2 floating point values seperated by whitespace
+      R2[i]=R2[i]/I; //PASSAR TENSOES PARA RESISTENCIAS
+      eR2[i] = eV/I + R2[i]/I*eI; //erro resistencia
+      i++;
+
+      if(i>=N)
+	test=1;
+      // do something with them
+    }
+
+
+  /////////////////////////Rp e Rap////////////////////////////////////////////////
+
+  ///Varrimento 1
+
+  double Rp = *std::min_element(R,R+N);
+  double eRp = *std::min_element(eR,eR+N); //Quanto maior a resistencia maior o seu erro, ver formula de erro
+  double Rap = *std::max_element(R,R+N);
+  double eRap = *std::max_element(eR,eR+N);
+
+  ///Varrimento 2
+
+  double Rp2 = *std::min_element(R2,R2+N);
+  double eRp2 = *std::min_element(eR2,eR2+N);
+  double Rap2 = *std::max_element(R2,R2+N);
+  double eRap2 = *std::max_element(eR2,eR2+N);
+
+
+  // Media do Rp e Rap
+  double Rp_med = (Rp+Rp2)/2;
+  double eRp_med = (eRp+eRp2)/2;
+  double Rap_med = (Rap+Rap2)/2;
+  double eRap_med = (eRap+eRap2)/2;
+
+
+
+  //////////////Grafico MR(H) com os respectivos erros/////////////////////////
+
+  ///Varrimento 1
+
+  double *MR = new double[N];
+  double *eH = new double[N];
+  double *eMR = new double[N];
+  for(int i=0;i<N;i++){
+
+    double e_mr= eR[i]/Rp + R[i]/(Rp*Rp)*eRp; //erro magneto-resistencia
+
+    eH[i]=eh; //dado no inicio do prog
+    eMR[i]=e_mr;
+    MR[i]=(R[i]-Rp)/Rp;
+
+  }
+  
+
+  TGraphErrors *MR_H = new TGraphErrors(N,H,MR,eH,eMR);
+  MR_H->SetMarkerStyle(1);
+  MR_H->SetLineColor(kBlue);
+
+
+  ///Varrimento 2
+
+  double *MR2 = new double[N];
+  double *eH2 = new double[N];
+  double *eMR2 = new double[N];
+  for(int i=0;i<N;i++){
+
+    //Os erros eV, eI e eH sao os mesmos para ambos os varrimentos
+    double e_mr2= eR2[i]/Rp + R2[i]/(Rp*Rp)*eRp; //erro magneto-resistencia
+
+    eH2[i]=eh; //dado no inicio do prog
+    eMR2[i]=e_mr2;//em percentagem
+    MR2[i]=(R2[i]-Rp)/Rp;//em percentagem
+
+  }
+  
+
+  TGraphErrors *MR_H2 = new TGraphErrors(N,H2,MR2,eH2,eMR2);
+  MR_H2->SetLineColor(kRed);
+  MR_H2->SetMarkerStyle(1);
+
+
+
+  TCanvas *c1 = new TCanvas("c1","Nome",200,10,700,500);
+  c1->SetFillColor(0);
+  //c1->SetGrid();
+  c1->GetFrame()->SetFillColor(21);
+  c1->GetFrame()->SetBorderSize(12);
+
+
+
+
+  TMultiGraph *mg = new TMultiGraph("mg","");
+  mg->Add(MR_H);
+  mg->Add(MR_H2);
+
+
+
+/////////////////// Arrows para as orientacoes /////////////////////////////////////////////////////////////////////////////
+  float arrow_step = 0.0020;//Distancia entre arrows
+  float arrow_offset = 0.0025;//Distancia do arrow mais proximo do grafico ao grafico
+  float l=50; //tamanho do arrow
+
+
+  //Regiao 1/////////////////////////
+
+  float ax1 = -390;
+  float ay1 = 0.004;
+
+  // H 
+  TArrow *r1ar1 = new TArrow(ax1,ay1,ax1+l,ay1,0.02,"<|");
+  r1ar1->SetLineColor(1);
+  r1ar1->SetFillColor(1);
+
+  // M pl 
+  TArrow *r1ar2 = new TArrow(ax1,ay1-arrow_step,ax1+l,ay1-arrow_step,0.02,"<|");
+  r1ar2->SetLineColor(8);
+  r1ar2->SetFillColor(8);
+
+  // M fl
+  TArrow *r1ar3 = new TArrow(ax1,ay1-2*arrow_step,ax1+l,ay1-2*arrow_step,0.02,"<|");
+  r1ar3->SetLineColor(9);
+  r1ar3->SetFillColor(9);
+
+
+  // Ku
+  float axku=385;
+  float ayku=0.042;
+  TArrow *arku = new TArrow(axku,ayku,axku+l,ayku,0.02,"<|>");
+  arku->SetLineColor(49);
+  arku->SetFillColor(49);
+  TText *text_ku = new TText(axku+8, ayku+0.001, "Ku");
+  text_ku->SetTextSize(0.03);
+
+
+  //Regiao 2///////
+
+  float ax2 = -120;
+  float ay2 = 0.037;
+
+  // H
+  TArrow *r2ar1 = new TArrow(ax2,ay2,ax2+l,ay2,0.02,"<|");
+  r2ar1->SetLineColor(1);
+  r2ar1->SetFillColor(1);
+
+
+  // M pl
+  TArrow *r2ar2 = new TArrow(ax2,ay2-arrow_step,ax2+l,ay2-arrow_step,0.02,"<|");
+  r2ar2->SetLineColor(8);
+  r2ar2->SetFillColor(8);
+
+  // M fl
+  TArrow *r2ar3 = new TArrow(ax2,ay2-2*arrow_step,ax2+l,ay2-2*arrow_step,0.02,"|>");
+  r2ar3->SetLineColor(9);
+  r2ar3->SetFillColor(9);
+
+
+
+  //Regiao 3///////
+
+  float ax3 = 375;
+  float ay3 = 0.007;
+
+  // H 
+  TArrow *r3ar1 = new TArrow(ax3,ay3,ax3+l,ay3,0.02,"|>");
+  r3ar1->SetLineColor(1);
+  r3ar1->SetFillColor(1);
+
+  // Mpl
+  TArrow *r3ar2 = new TArrow(ax3,ay3-arrow_step,ax3+l,ay3-arrow_step,0.02,"|>");
+  r3ar2->SetLineColor(8);
+  r3ar2->SetFillColor(8);
+
+
+  // Mfl
+  TArrow *r3ar3 = new TArrow(ax3,ay3-2*arrow_step,ax3+l,ay3-2*arrow_step,0.02,"|>");
+  r3ar3->SetLineColor(9);
+  r3ar3->SetFillColor(9);
+
+
+  //Legenda///////////////////////////
+
+  TLegend* leg = new TLegend(0.1,0.7,0.2,0.9);//(x1,y1,x2,y2)
+  
+  //leg->SetHeader("Orientac#tilde{o}es");
+  leg->AddEntry(MR_H,"#rightarrow","lep");
+  leg->AddEntry(MR_H2,"#leftarrow","lep");
+
+  leg->AddEntry(r1ar1,"H","l");
+  leg->AddEntry(r1ar2,"M pl","l");
+  leg->AddEntry(r1ar3,"M fl","l");
+
+
+
+  file.close();
+  file_2.close();
+  delete [] R;
+  delete [] H;
+  delete [] MR;
+  delete [] eH;
+  delete [] eMR;
+  delete [] R2;
+  delete [] H2;
+  delete [] MR2;
+  delete [] eH2;
+  delete [] eMR2;
+  delete [] eR;
+  delete [] eR2;
+
+
+  mg->Draw("AP");
+  mg->GetXaxis()->SetTitle("H (Oe)");
+  mg->GetYaxis()->SetTitle("MR");
+  mg->GetYaxis()->SetTitleOffset(1.2);
+
+ //arrows
+  r1ar1->Draw();
+  r2ar1->Draw();
+  r3ar1->Draw();
+
+  r1ar2->Draw();
+  r2ar2->Draw();
+  r3ar2->Draw();
+
+  r1ar3->Draw();
+  r2ar3->Draw();
+  r3ar3->Draw();
+
+  arku->Draw();
+  text_ku -> Draw();
+
+  
+
+  //legenda
+  leg->Draw();
+  
+
+  c1->Update();
+  c1->Modified();
+  c1->Print(plot_label.c_str());
+  getchar();
+
+
+  theApp.Terminate();
+  return 0;  
+}
