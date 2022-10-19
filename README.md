@@ -2,7 +2,7 @@
 
 Programs I did in my Masters or PhD in Physics.
 
-3_body_problem : A numerical code for solving the 3 body problem with gravitational, elastic and electric forces among the 3 bodies.
+3_body_problem : A numerical code in Mathematica for solving the 3 body problem with gravitational, elastic and electric forces among the 3 bodies.
 
 Lab_plot&fit_program: Work done in Laboratory classes. Contains a program that performs plots, histograms or fits of the experimental data. The development of this program was essential since we needed a high degree of personalisation in our plots. My group had the best grade in the class.
 
