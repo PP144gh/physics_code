@@ -1,3 +1,12 @@
+Work done in Laboratory classes. Contains a program (done in C++ with CERN's ROOT libraries) that performs plots, histograms or fits of the experimental data. The development of this program was essential since we needed a high degree of personalisation in our plots. My group had the best grade in the class.
+
+
+
+
+HOWTO
+
+
+
 Hardware eventually fails. Software eventually works. And fail, we shall.
 
 1. Introdução
