@@ -1,0 +1,2 @@
+Files from my second programming class - computational physics - where I learned C++. B09/Trabx contains the midterms. Trab1 consisted in developing numerical methods to operate on polynomial functions. 02 consisted in developing numerical methods to solve several physics problems. Projecto is the final project folder. Again, it consisted in developing numerical methods to solve physics problems, but there was an emphasis in data visualisation.
+
