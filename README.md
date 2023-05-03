@@ -1,6 +1,6 @@
 # physics_code
 
-Programs I did in my Masters or PhD in Physics.
+Programs I developed during my Masters and PhD in Physics.
 
 3_body_problem : A numerical code in Mathematica for solving the 3 body problem with gravitational, elastic and electric forces among the 3 bodies.
 
